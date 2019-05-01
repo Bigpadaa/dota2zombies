@@ -1,0 +1,38 @@
+"DOTAAbilities"
+{
+  //=================================================================================================================
+  // Bounty Hunter: Jinada
+  //=================================================================================================================
+  "bounty_hunter_jinada"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "ID"                                                  "5286"                            // unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+    "AbilityBehavior"                                     "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "SpellDispellableType"                                "SPELL_DISPELLABLE_YES"
+    "MaxLevel"                                            "6"
+    "RequiredLevel"                                       "1"
+    "LevelsBetweenUpgrades"                               "2"
+
+    // Stats
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCooldown"                                     "12 9 6 3 3 3"
+
+    // Special
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "bonus_damage"                                    "80 110 140 170 260 400"
+      }
+      "02"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "gold_steal"                                      "60 90 120 150 1200 2400" //OAA // GPM 300 600 1200 3000 24000 48000
+        "LinkedSpecialBonus"                              "special_bonus_unique_bounty_hunter"
+      }
+    }
+  }
+}

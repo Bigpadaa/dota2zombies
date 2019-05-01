@@ -1,0 +1,52 @@
+"DOTAItems"
+{
+  //=================================================================================================================
+  // Demons Soul
+  //=================================================================================================================
+  "item_upgrade_core_4"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "ID"                                                  "3533"      // unique ID
+    "BaseClass"                                           "item_lua"
+    "ScriptFile"                                          "items/upgrade_core.lua"
+    "AbilityBehavior"                                     "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+
+    // Stats
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityTextureName"                                  "custom/demons_soul"
+    "Effect"                                              "particles/items/upgrade_4.vpcf"
+    "Model"                                               "models/items/upgrade_4.vmdl"
+
+    // Item Info
+    //-------------------------------------------------------------------------------------------------------------
+
+    "ItemCost"                                            "10000"
+    "ItemPurchasable"                                     "1"
+    "ItemSellable"                                      "1"
+    "ItemKillable"                                        "1"
+    "ItemShareability"                                    "ITEM_FULLY_SHAREABLE"
+
+    // Special
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"                                        "FIELD_FLOAT"
+        "channel_time"                                    "3.0"
+      }
+      "02"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "core_count"                                      "2"
+      }
+	}
+    "precache"
+    {
+      "particle"                  "particles/items/upgrade_4.vpcf"
+      "model"                     "models/items/upgrade_4.vmdl"
+    }
+
+  }
+}

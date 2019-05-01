@@ -1,0 +1,52 @@
+"DOTAAbilities"
+{
+  //=================================================================================================================
+  // Enchantress: Enchant
+  //=================================================================================================================
+  "enchantress_enchant"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "ID"                                                  "5268"                            // unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+    "AbilityBehavior"                                     "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+    "AbilityUnitTargetTeam"                               "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"                               "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    "SpellDispellableType"                                "SPELL_DISPELLABLE_YES"
+    "MaxLevel"                                            "6"
+
+    // Casting
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCastRange"                                    "700"
+    "AbilityCastPoint"                                    "0.3"
+
+    // Time
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCooldown"                                     "22 18 14 10 10 10"
+    "AbilityDuration"                                     "3.75 4.5 5.25 6 7 8"
+
+    // Cost
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityManaCost"                                     "40 50 60 70 80 90"
+
+    // Special
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"                                        "FIELD_FLOAT"
+        "dominate_duration"                               "26 44 62 80 120 240"
+      }
+      "02"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "slow_movement_speed"                             "-55"
+      }
+      "03"
+      {
+        "var_type"                                        "FIELD_FLOAT"
+        "tooltip_duration"                                "3.75 4.5 5.25 6 7 8"
+      }
+    }
+  }
+}

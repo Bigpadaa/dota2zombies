@@ -1,0 +1,148 @@
+"DOTAItems"
+{
+  //=================================================================================================================
+  // Recipe: Greater Phase Boots
+  //=================================================================================================================
+  "item_recipe_greater_phase_boots"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "ID"                                                  "3000"                            // unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+    "BaseClass"                                           "item_datadriven"
+    "Model"                                               "models/props_gameplay/recipe.mdl"
+    "AbilityTextureName"                                  "custom/recipe/recipe_2"
+    // Item Info
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemCost"                                            "100"
+    "ItemShopTags"                                        ""
+
+    // Recipe
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemRecipe"                                          "1"
+    "ItemResult"                                          "item_greater_phase_boots"
+    "ItemRequirements"
+    {
+      "01"                                                "item_phase_origin;item_boots;item_upgrade_core"
+      "02"                                                "item_phase_origin;item_boots;item_upgrade_core_2"
+      "03"                                                "item_phase_origin;item_boots;item_upgrade_core_3"
+      "04"                                                "item_phase_origin;item_boots;item_upgrade_core_4"
+    }
+  }
+
+  //=================================================================================================================
+  // Greater Phase Boots
+  //=================================================================================================================
+  "item_greater_phase_boots"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "ID"                                                  "3005"                          // unique ID number for this item.  Do not change this once established or it will invalidate collected stats.
+    "BaseClass"                                           "item_lua"
+    "ScriptFile"                                          "items/farming/greater_phase_boots.lua"
+    "AbilityBehavior"                                     "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
+    "AbilityTextureName"                                  "custom/greater_phase_boots"
+    // Stats
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCooldown"                                     "8.0"
+
+    // Item Info
+    //-------------------------------------------------------------------------------------------------------------
+    "ItemCost"                                            "1200"
+    "ItemShopTags"                                        "damage;move_speed;hard_to_tag"
+    "ItemQuality"                                         "common"
+    "ItemAliases"                                         "greater phase boots;phase boots;phase"
+    "ItemDeclarations"                                    "DECLARE_PURCHASES_TO_SPECTATORS"
+
+    "MaxUpgradeLevel"                                     "4"
+    "ItemBaseLevel"                                       "1"
+    "UpgradesItems"                                       "item_greater_phase_boots;item_greater_phase_boots_2;item_greater_phase_boots_3;item_greater_phase_boots_4"
+    "UpgradeRecipe"                                       "item_recipe_greater_phase_boots"
+    // Special
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "bonus_movement_speed"                            "20 25 30 35"
+      }
+      "02"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "bonus_damage_melee"                              "25 60 95 130"
+      }
+      "03"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "bonus_damage_range"                              "20 50 85 120"
+      }
+      "04"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "damage_block_melee"                              "0"
+      }
+      "05"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "damage_block_ranged"                             "0"
+      }
+      "06"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "block_chance"                                    "0"
+      }
+      "07"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "phase_movement_speed"                            "25 28 32 35"
+      }
+      "08"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "phase_movement_speed_range"                      "15 20 25 30"
+      }
+      "09"
+      {
+        "var_type"                                        "FIELD_FLOAT"
+        "phase_duration"                                  "3.0"
+      }
+      "10"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "bonus_attack_speed"                              "0"
+      }
+      "11"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "bonus_armor"                                     "7 9 11 13"
+      }
+      "12"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "splinter_radius"                                 "375"
+      }
+      "13"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "splinter_attack_outgoing"                        "50"
+      }
+      "14"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "splinter_count"                                  "4 5 6 7"
+      }
+      "15"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "melee_splinter_speed"                            "1250" // The projectile speed to use for splinters from melee heroes
+      }
+    }
+
+    // Precache
+    //-------------------------------------------------------------------------------------------------------------
+    "precache"
+    {
+      "particle"                                          "particles/units/heroes/hero_drow/drow_base_attack.vpcf"
+    }
+  }
+}

@@ -1,0 +1,77 @@
+"DOTAAbilities"
+{
+  //=================================================================================================================
+  // Keeper of the Light: Blinding Light
+  //=================================================================================================================
+  "keeper_of_the_light_blinding_light"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "ID"                                                  "5476"                            // unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
+    "AbilityBehavior"                                     "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
+    "SpellImmunityType"                                   "SPELL_IMMUNITY_ENEMIES_NO"
+    "SpellDispellableType"                                "SPELL_DISPELLABLE_YES"
+
+    "MaxLevel"                                            "6"
+    "RequiredLevel"                                       "1"
+    "LevelsBetweenUpgrades"                               "2"
+
+    // Casting
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCastRange"                                    "550 600 650 700 800 900"
+    "AbilityCastPoint"                                    "0.3"
+
+    // Time
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityCooldown"                                     "15" //OAA   
+
+    // Cost
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityManaCost"                                     "100 125 150 175 250 300"
+
+    // Stats
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilityModifierSupportValue"                         "1.0"
+
+    // Special
+    //-------------------------------------------------------------------------------------------------------------
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "miss_rate"                                       "70"
+      }
+      "02"
+      {
+        "var_type"                                        "FIELD_FLOAT"
+        "duration"                                        "3 4 5 6 7 8"
+      }
+      "03"
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "radius"                                          "600"
+      }
+      "05" // 04
+      {
+        "var_type"                                        "FIELD_FLOAT"
+        "knockback_duration"                              "0.4"
+      }
+      "06" // 05
+      {
+        "var_type"                                        "FIELD_FLOAT"
+        "knockback_distance"                              "350"
+      }
+      "07" // 06
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "damage"                                          "50 100 150 200 400 900"
+      }
+      "08" // 07
+      {
+        "var_type"                                        "FIELD_INTEGER"
+        "cast_range_tooltip"                              "550 600 650 700 800 900"
+      }
+    }
+  }
+}
