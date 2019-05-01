@@ -8,21 +8,14 @@ zombie_counter = 1
 unit_hp = 10
 unit_damageMin = 20
 unit_damageMax = 25
-unit_goldMin = 25
-unit_goldMax = 35
 
 flying_unit_hp = 10
 flying_unit_damageMin = 10
 flying_unit_damageMax = 10
-flying_unit_goldMin = 65
-flying_unit_goldMax = 55
 
 boss_unit_hp = 10
 boss_unit_damageMin = 10
 boss_unit_damageMax = 10
-boss_unit_goldMin = 250
-boss_unit_goldMax = 300
-
 
 if GameMode == nil then
     DebugPrint( '[BAREBONES] creating barebones game mode' )
@@ -180,49 +173,31 @@ function SpawnCreeps(location, howmany, unittospawn)
     local point = Entities:FindByName( nil, location):GetAbsOrigin()
     for i = 1, howmany do
     	if zombie_counter < 120 then
-    		unit = CreateUnitByName(unittospawn, point, true, nil, nil, DOTA_TEAM_NEUTRALS)
-    		if unittospawn == "survival_zombie" then
+		      unit = CreateUnitByName(unittospawn, point, true, nil, nil, DOTA_TEAM_NEUTRALS)
 		      unit:SetMaxHealth(unit_hp)
 		      unit:SetHealth(unit_hp)
 		      unit:SetBaseMaxHealth(unit_hp)
 		      unit:SetBaseDamageMax(unit_damageMax)
 		      unit:SetBaseDamageMin(unit_damageMin)
-		      unit:SetMaximumGoldBounty(unit_goldMax)
-		      unit:SetMinimumGoldBounty(unit_goldMin)
 		      zombie_counter = zombie_counter + 1
 		      print(zombie_counter)
-		  	elseif unittospawn == "survival_familiar" then
-		  	  unit:SetMaxHealth(flying_unit_hp)
-		      unit:SetHealth(flying_unit_hp)
-		      unit:SetBaseMaxHealth(flying_unit_hp)
-		      unit:SetBaseDamageMax(flying_unit_damageMax)
-		      unit:SetBaseDamageMin(flying_unit_damageMin)
-		      unit:SetMaximumGoldBounty(flying_unit_goldMax)
-		      unit:SetMinimumGoldBounty(flying_unit_damageMin)
-		      zombie_counter = zombie_counter + 1
-		      print(zombie_counter)
-		  	else
-		  		print("unit cant be spawned")
-		  	end
-		end
+		  end
+
     end
   end
 function IncreaseStrengh()
   unit_hp = unit_hp + ((unit_hp^1.02-unit_hp)*0.1) + 3
   unit_damageMin = unit_damageMin + ((unit_damageMin^1.01 - unit_damageMin) * 0.1) + 2
   unit_damageMax = unit_damageMax + ((unit_damageMax^1.01 - unit_damageMax)* 0.1) + 2
-  unit_goldMin = unit_goldMin + unit_goldMin/10
-  unit_goldMax = unit_goldMax + unit_goldMax/10
 
   flying_unit_hp = flying_unit_hp + ((flying_unit_hp^1.02-flying_unit_hp)*0.1) + 2
   flying_unit_damageMin = flying_unit_damageMin + ((flying_unit_damageMin^1.01 - flying_unit_damageMin) * 0.1) + 2
   flying_unit_damageMax = flying_unit_damageMax + ((flying_unit_damageMax^1.01 - flying_unit_damageMax)* 0.1) + 2
-  flying_unit_goldMin = flying_unit_goldMin + flying_unit_goldMin/10
-  flying_unit_damageMax = flying_unit_damageMax + flying_unit_goldMax/10
+
 
   boss_unit_hp = ((unit_hp+flying_unit_hp)/2*10)
-  boss_unit_damageMin = ((unit_damageMin + flying_unit_damageMin)/2*3)
-  boss_unit_damageMax = ((unit_damageMax + flying_unit_damageMax)/2 *3)
+  boss_unit_damageMin = ((unit_damageMin + flying_unit_damageMin)/2* 3)
+  boss_unit_damageMax = ((unit_damageMax + flying_unit_damageMax)/2 * 3)
 end
 
 function GameMode:OnEntityKilled(keys)
